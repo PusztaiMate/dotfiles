@@ -57,3 +57,5 @@ set belloff=all
 colorscheme gruvbox
 set nu
 set wildmenu
+hi Normal ctermbg=None
+set scrolloff=4
