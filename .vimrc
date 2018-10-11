@@ -71,8 +71,10 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 noremap <F5> :set list!<CR>
 
 
+"vim-airline-theme
+let g:airline_theme=base16_ashes
 
-"vim-ariline
+"vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
