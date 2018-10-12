@@ -8,19 +8,27 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
+"general
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tmhedberg/SimpylFold'
-Plugin 'Vimjas/vim-python-pep8-indent'
-Plugin 'ervandew/supertab'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/nerdtree'
-Plugin 'plytophogy/vim-virtualenv'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'ervandew/supertab'
+
+"python specific
+Plugin 'davidhalter/jedi-vim'
+Plugin 'Vimjas/vim-python-pep8-indent'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'plytophogy/vim-virtualenv'
+
+"colorschemes
+Plugin 'morhetz/gruvbox'
 Plugin 'euclio/vim-nocturne'
 Plugin 'vim-scripts/harlequin'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-scripts/CSApprox'
+
+"vim-airline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'powerline/fonts'
@@ -60,8 +68,9 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <space> za
 
 "set belloff=all
+set background=dark
+let g:solarized_termcolors = 256
 colorscheme gruvbox
-let g:airline_theme='dark'
 set nu
 set wildmenu
 hi Normal ctermbg=None
@@ -72,7 +81,10 @@ noremap <F5> :set list!<CR>
 
 
 "vim-airline-theme
-let g:airline_theme=base16_ashes
+"base16_ashes looks nice with solarized
+let g:airline_theme='base16_ashes'
+"dark ok with nocturne
+"let g:airline_theme='dark'
 
 "vim-airline
 let g:airline#extensions#tabline#enabled = 1
