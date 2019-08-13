@@ -16,23 +16,19 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'ervandew/supertab'
 
 "python specific
-Plugin 'davidhalter/jedi-vim'
 Plugin 'Vimjas/vim-python-pep8-indent'
-Plugin 'vim-syntastic/syntastic'
+"Plugin 'vim-syntastic/syntastic'
 Plugin 'plytophogy/vim-virtualenv'
+Plugin 'dense-analysis/ale'
+
+"js
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'othree/yajs.vim'
+Plugin 'mxw/vim-jsx'
 
 "colorschemes
 Plugin 'morhetz/gruvbox'
-Plugin 'euclio/vim-nocturne'
-Plugin 'vim-scripts/harlequin'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'vim-scripts/CSApprox'
-
-"vim-airline
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'powerline/fonts'
-Plugin 'powerline/powerline'
 
 
 " All of your Plugins must be added before the following line
@@ -46,9 +42,20 @@ syntax on
 let g:SimpylFold_docstring_preview=1
 "NerdTree
 let NERDTreeIgnore=['\.pyc$', '\~$']
+let g:deoplete#enable_at_startup = 1
+let g:ale_fixers = {
+\    'javascript': ['eslint'],
+\    'vue': ['eslint'],
+\    'scss': ['prettier']
+\}
+let g:ale_fix_on_save = 1
+let g:ale_linters = {
+\   'python': ['flake8'],
+\   'javascript': ['eslint'],
+\   'vue': ['eslint']
+\}
 
 "python specific
-au BufNewFile,BufRead *.py:
 set tabstop=4 
 set softtabstop=4
 set shiftwidth=4
@@ -65,61 +72,17 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-nnoremap <space> za
+nnoremap <space> zA
 
 "set belloff=all
 set background=dark
 let g:solarized_termcolors = 256
-colorscheme gruvbox
 set nu
 set wildmenu
 hi Normal ctermbg=None
-set scrolloff=4
+set scrolloff=8
 
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 noremap <F5> :set list!<CR>
 
-
-"vim-airline-theme
-"base16_ashes looks nice with solarized
-let g:airline_theme='base16_ashes'
-"dark ok with nocturne
-"let g:airline_theme='dark'
-
-"vim-airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.linenr = '☰'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.maxlinenr = '㏑'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_symbols.notexists = 'Ɇ'
-let g:airline_symbols.whitespace = 'Ξ'
-
-" powerline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = '☰'
-let g:airline_symbols.maxlinenr = ''
 
