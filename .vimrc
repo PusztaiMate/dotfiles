@@ -20,6 +20,7 @@ Plugin 'Vimjas/vim-python-pep8-indent'
 "Plugin 'vim-syntastic/syntastic'
 Plugin 'plytophogy/vim-virtualenv'
 Plugin 'dense-analysis/ale'
+Plugin 'deoplete-plugins/deoplete-jedi'
 
 "js
 Plugin 'Shougo/deoplete.nvim'
@@ -29,6 +30,7 @@ Plugin 'mxw/vim-jsx'
 "colorschemes
 Plugin 'morhetz/gruvbox'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'joshdick/onedark.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -81,6 +83,7 @@ set nu
 set wildmenu
 hi Normal ctermbg=None
 set scrolloff=8
+colorscheme onedark
 
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 noremap <F5> :set list!<CR>
